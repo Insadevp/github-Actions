@@ -15,6 +15,7 @@ describe('template spec', () => {
    
     // Sélectionne la première taille disponible
     cy.get('#option-label-size-143-item-166').first().click();
+    cy.pause();
 
     // Sélectionne une couleur disponible
     cy.get('[aria-describedby="option-label-color-93"]').click(); 
