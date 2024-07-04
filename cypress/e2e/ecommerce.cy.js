@@ -1,6 +1,6 @@
 describe('template spec', () => {
   it('Visits Magento website and selects a product', () => {
-    cy.visit('https://magento.softwaretestingboard.com/')
+    cy.visit('https://magento.softwaretestingboard.com/').wait(4000)
 
     cy.get('#ui-id-5').trigger('mouseover');
     cy.get('#ui-id-17').click();
@@ -8,13 +8,12 @@ describe('template spec', () => {
     cy.get('#ui-id-4').trigger('mouseover');
     cy.get('#ui-id-9').trigger('mouseover');
     cy.get('#ui-id-5').click();
-   /* cy.url().should('include','/men.html')
-    cy.visit('https://magento.softwaretestingboard.com/men/tops-men.html')*/
+
     // Sélectionne le premier produit
     cy.get('.product-image-photo').first().click();
    
     // Sélectionne la première taille disponible
-    cy.get('#option-label-size-143-item-166').click({ force: true });
+    cy.get('#option-label-size-143-item-166').first().click();
 
 
     // Sélectionne une couleur disponible
