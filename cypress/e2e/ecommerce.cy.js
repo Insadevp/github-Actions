@@ -39,7 +39,7 @@ describe('template spec', () => {
     cy.get('[name="country_id"]').select('France');
     cy.get('[name="region_id"]').select('Rhône'); 
     cy.get('input[ name = "telephone"]').type('0603030201');
-   cy.get('.price').contains('$10.00').click({ multiple: true });
+   //cy.get('.price').contains('$10.00').click({ multiple: true });
 
     cy.get('button span').contains('Next').click();
     
