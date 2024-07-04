@@ -14,24 +14,23 @@ describe('template spec', () => {
     cy.get('.product-image-photo').first().click();
    
     // Sélectionne la première taille disponible
-    cy.get('#option-label-size-143-item-166').first().click();
-    cy.pause();
+    cy.get('#option-label-size-143-item-166').click({ force: true });
+
 
     // Sélectionne une couleur disponible
     cy.get('[aria-describedby="option-label-color-93"]').click(); 
     //ajouter un produit au panier
     cy.get('#product-addtocart-button').click();
-    // Consulter le panier
-   
-    // cy.get('span').wait(3000).contains('View and Edit Cart').click();
     // Modifier la quantité
+    cy.get('#qty').clear().type(2);
+    // Consulter le panier
+    cy.contains('span', 'Add to Cart').click();
+    cy.get('.minicart-wrapper .action.showcart').click();
+    cy.get('#top-cart-btn-checkout').click();
+  
    
-    cy.get('.details-qty qty input').clear().type(2);
-    
-    cy.contains('button','Update Shopping Cart').click();
-    cy.get('span').contains('Proceed to Checkout').click();
-    cy.pause()
-    cy.get('input[name="username"]').type('insaf@gmail.com');
+   cy.visit('https://magento.softwaretestingboard.com/checkout/#shipping')
+    cy.get('#customer-email').type('insaf69@gmail.com');
     cy.get('input[name="firstname"]').type('insaf2');
     cy.get('input[name="lastname"]').type('saadaoui'); 
     cy.get('input[name = "street[0]"]').type('5 rue francois mansart');
@@ -40,9 +39,13 @@ describe('template spec', () => {
     cy.get('[name="country_id"]').select('France');
     cy.get('[name="region_id"]').select('Rhône'); 
     cy.get('input[ name = "telephone"]').type('0603030201');
-   //cy.get('.price').contains('$10.00').click({ multiple: true });
+   cy.get('.price').contains('$15.00').click();
 
-    cy.get('button span').contains('Next').click();
+    cy.wait(3000)
+    cy.get('span').contains('Next').click();
+    cy.url().should('include', '/checkout/#payment');
+    cy.get('span').contains('Place Order').click();
+    cy.contains('Thank you for your purchase!')
     
 
 
