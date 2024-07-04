@@ -36,4 +36,22 @@ jobs:
       - name: Run Postman tests
         run: |
           npm install -g newman 
-         
+           - name: Archive test results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-test-results
+          path: cypress/reports
+
+      - name: Generate HTML report
+        if: always()
+        run: |
+          npx marge cypress/reports/*.json -o cypress/reports/html
+        continue-on-error: true
+
+      - name: Upload HTML report
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-html-report
+          path: cypress/reports/html
