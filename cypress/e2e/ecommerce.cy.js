@@ -26,8 +26,8 @@ describe('template spec', () => {
     cy.contains('span', 'Add to Cart').click();
     cy.get('.minicart-wrapper .action.showcart').click();
     cy.get('#top-cart-btn-checkout').click();
-  
-   
+
+   //remplir le formulaire
    cy.visit('https://magento.softwaretestingboard.com/checkout/#shipping')
     cy.get('#customer-email').type('insaf69@gmail.com');
     cy.get('input[name="firstname"]').type('insaf2');
