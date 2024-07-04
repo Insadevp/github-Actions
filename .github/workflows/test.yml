@@ -31,7 +31,7 @@ jobs:
 
       - name: Run Cypress tests
         # Exécuter les tests Cypress
-        run: npm run cy:run
+        run:  run: npx cypress run
 
       - name: Run Postman tests
         run: |
