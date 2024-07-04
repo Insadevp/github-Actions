@@ -1,0 +1,36 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Déclenche ce workflow à chaque push
+on: [push]
+
+jobs:
+  test:
+    # Utilise l'image d'environnement Ubuntu la plus récente
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        # Action pour cloner le dépôt github
+        uses: actions/checkout@v2
+
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          # Installer Node.js version 20
+          node-version: "20"
+
+      - name: Install dependencies
+        # Installer les dépendances du projet
+        run: npm install
+
+      - name: Run Cypress tests
+        # Exécuter les tests Cypress
+        run: npm run cypress:run
+
+      - name: Run Postman tests
+        run: |
+          npm install -g newman 
+          newman run path/to/your/postman_collection.json --environment path/to/your/postman_environment.json
+
