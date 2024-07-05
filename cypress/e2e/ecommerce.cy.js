@@ -13,7 +13,7 @@ describe('template spec', () => {
     cy.get('.product-image-photo').first().click();
    
     // Sélectionne la première taille disponible
-    cy.get('#option-label-size-143-item-166').first().click();
+    cy.get('#option-label-size-143-item-166').wait(3000).click();
 
 
     // Sélectionne une couleur disponible
