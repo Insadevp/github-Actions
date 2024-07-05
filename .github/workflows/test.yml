@@ -43,8 +43,13 @@ jobs:
       - name: List JSON reports
         run: ls -la cypress/reports
 
+    
       - name: Generate HTML report
         run: npm run report:merge
+        
+      - name: Display JSON content
+        run: cat cypress/reports/some-report.json
+
 
       - name: Upload HTML report
         # Télécharger le rapport HTML comme artefact
