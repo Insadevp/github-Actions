@@ -41,7 +41,7 @@ jobs:
 
       - name: Upload HTML report
         # Télécharger le rapport HTML comme artefact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: cypress-html-report
           path: cypress/reports/*.html
