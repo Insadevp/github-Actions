@@ -35,19 +35,14 @@ jobs:
 
      
         uses: actions/upload-artifact@v3
-        with:
           name: cypress-test-results
           path: cypress/reports
+          run: npm run report:generate
 
       - name: Generate HTML report
-        if: always()
-        run: |
-          npx marge cypress/reports/*.json -o cypress/reports/html
-        continue-on-error: true
+        run: npm run report:merge
+       
 
       - name: Upload HTML report
-        if: always()
-        uses: actions/upload-artifact@v3
-        with:
           name: cypress-html-report
           path: cypress/reports/*.html
