@@ -8,7 +8,7 @@
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "report:merge": "mochawesome-merge ./mochawesome-report/results/*.json > merged-report.json",
-    "report:generate": "marge merged-report.json --reportDir ./mochawesome-report --inline --overwrite"
+    "report:generate": "marge merged-report.json --reportDir ./mochawesome-report/results --inline --overwrite"
   },
   "author": "",
   "license": "ISC",
