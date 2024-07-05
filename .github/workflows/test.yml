@@ -40,8 +40,6 @@ jobs:
         # Exécuter les tests Cypress
         run: npm run cy:run
 
-      - name: List report files
-        run: ls -l ./mochawesome-report/results/
 
     
       - name: Generate HTML report
