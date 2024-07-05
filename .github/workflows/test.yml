@@ -34,11 +34,7 @@ jobs:
         run: npm run cy:run
 
      
-        uses: actions/upload-artifact@v3
-          name: cypress-test-results
-          path: cypress/reports
-          run: npm run report:generate
-
+     
       - name: Generate HTML report
         run: npm run report:merge
        
