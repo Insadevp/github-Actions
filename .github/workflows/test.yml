@@ -40,6 +40,5 @@ jobs:
         with:
           name: cypress-html-report
           path: cypress/reports/*.html
-
    env:
-      ACTIONS_STEP_DEBUG: true
+     ACTIONS_STEP_DEBUG: true
