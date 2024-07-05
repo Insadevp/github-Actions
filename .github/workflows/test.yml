@@ -40,18 +40,18 @@ jobs:
         # Exécuter les tests Cypress
         run: npm run cy:run
 
-
+      - name: Display JSON content
+        run: cat cypress/reports/ merged-report.json
     
       - name: Generate HTML report
         run: npm run report:merge
         
-      - name: Display JSON content
-        run: cat cypress/reports/some-report.json
+    
 
 
       - name: Upload HTML report
         # Télécharger le rapport HTML comme artefact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v2
         with:
           name: cypress-html-report
           path: cypress/reports/*.html
