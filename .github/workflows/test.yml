@@ -13,10 +13,6 @@ jobs:
     runs-on: ubuntu-latest
 
 
-    env:
-      ACTIONS_STEP_DEBUG: true
-
-
     steps:
       - name: Checkout repository
         # Action pour cloner le dépôt github
