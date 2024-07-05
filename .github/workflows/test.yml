@@ -4,9 +4,9 @@ name: CI
 
 # Déclenche ce workflow à chaque push
 on: 
-    push:
-      branches: ["main"]
-      workflow_dispatch:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
 
 jobs:
   test:
@@ -28,16 +28,17 @@ jobs:
       - name: Install dependencies
         # Installer les dépendances du projet
         run: npm install
-
-      - name: Run Cypress tests
+ name: Run Cypress tests
         # Exécuter les tests Cypress
-        run: npm run cy:run
+        run: npx cypress run
 
-     
-     
       - name: Generate HTML report
-        run: npm run report:merge
-       
-
+        # Générer le rapport HTML
+        run: npx mochawesome-merge cypress/reports/*.json | npx mochawesome-report-generator -o cypress/reports/html
+        
       - name: Upload HTML report
-        path: cypress/reports/*.html
+        # Télécharger le rapport HTML comme artefact
+        uses: actions/upload-artifact@v2
+        with:
+          name: cypress-html-report
+          path: cypress/reports/html
