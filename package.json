@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+      "test": "mocha --reporter mochawesome --reporter-options reportDir=./mochawesome-report,reportFilename=mochawesome",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "report:merge": "mochawesome-merge --reportDir ./mochawesome-report > merged-report.json"
+    "report:merge": "mochawesome-merge ./mochawesome-report/results/*.json > merged-report.json"
+
   },
   "author": "",
   "license": "ISC",
