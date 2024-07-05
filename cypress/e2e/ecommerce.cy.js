@@ -45,10 +45,6 @@ describe('template spec', () => {
     cy.url().should('include', '/checkout/#payment');
     cy.get('span').contains('Place Order').click();
     cy.contains('Thank you for your purchase!')
-    
-
-
-
    
   
   });

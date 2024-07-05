@@ -11,6 +11,9 @@ jobs:
 
     # Utilise l'image d'environnement Ubuntu la plus récente
     runs-on: ubuntu-latest
+     env:
+      ACTIONS_STEP_DEBUG: true
+
 
     steps:
       - name: Checkout repository
@@ -41,6 +44,3 @@ jobs:
           name: cypress-html-report
           path: cypress/reports/*.html
  
-
-  env:
-      ACTIONS_STEP_DEBUG: true
