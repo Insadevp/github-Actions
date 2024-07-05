@@ -26,11 +26,17 @@ jobs:
       - name: Install dependencies
         # Installer les dépendances du projet
         run: npm install
-       name: installer-cypress-global
+
+      - name: Install Cypress globally
         run: npm install -g cypress
-      name: Run Cypress tests
+
+      - name: Run Cypress tests
         # Exécuter les tests Cypress
         run: npx cypress run
+
+      - name: Generate HTML report
+        # Générer le rapport HTML
+        run: npx mochawesome-merge cypress/reports/*.json | npx mochawesome-report-generator -o cypress/reports/html
 
       - name: Upload HTML report
         # Télécharger le rapport HTML comme artefact
