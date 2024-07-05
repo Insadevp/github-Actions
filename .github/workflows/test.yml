@@ -11,7 +11,9 @@ jobs:
 
     # Utilise l'image d'environnement Ubuntu la plus récente
     runs-on: ubuntu-latest
-     env:
+
+
+    env:
       ACTIONS_STEP_DEBUG: true
 
 
