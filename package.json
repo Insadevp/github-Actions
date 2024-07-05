@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "report:merge": "your-command-here"
+    "report:merge": "mochawesome-merge --reportDir ./mochawesome-report > merged-report.json"
   },
   "author": "",
   "license": "ISC",
