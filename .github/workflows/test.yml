@@ -31,9 +31,17 @@ jobs:
       - name: Install Cypress globally
         run: npm install -g cypress
 
+
       - name: Run Cypress tests
         # Exécuter les tests Cypress
-        run: npx cypress run
+        run: npm run cy:run
+
+      - name: List JSON reports
+        run: ls -la cypress/reports
+
+      - name: Generate HTML report
+        # Générer le rapport HTML
+        run: npm run report:merge
 
       - name: Upload HTML report
         # Télécharger le rapport HTML comme artefact
