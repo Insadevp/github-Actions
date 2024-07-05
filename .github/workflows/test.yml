@@ -34,10 +34,6 @@ jobs:
         # Exécuter les tests Cypress
         run: npx cypress run
 
-      - name: Generate HTML report
-        # Générer le rapport HTML
-        run: npx mochawesome-merge cypress/reports/*.json | npx mochawesome-report-generator -o cypress/reports/html
-
       - name: Upload HTML report
         # Télécharger le rapport HTML comme artefact
         uses: actions/upload-artifact@v2
