@@ -43,7 +43,7 @@ jobs:
 
       - name: Generate HTML report
         # Générer le rapport HTML
-        run: npx mochawesome-merge cypress/reports/*.json | npx mochawesome-report-generator -o cypress/reports/*.html
+        run: npx mochawesome-merge cypress/reports/*.json | npx mochawesome-report-generator -o cypress/reports/html
 
 
    
