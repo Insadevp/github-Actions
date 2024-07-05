@@ -31,13 +31,9 @@ jobs:
 
       - name: Run Cypress tests
         # Exécuter les tests Cypress
-        run:  run: npx cypress run
+        run: npm run cy:run
 
-      - name: Run Postman tests
-        run: |
-          npm install -g newman 
-           - name: Archive test results
-        if: always()
+     
         uses: actions/upload-artifact@v3
         with:
           name: cypress-test-results
@@ -54,4 +50,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: cypress-html-report
-          path: cypress/reports/html
+          path: cypress/reports/*.html
