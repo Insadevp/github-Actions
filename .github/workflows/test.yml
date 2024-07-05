@@ -40,4 +40,4 @@ jobs:
        
 
       - name: Upload HTML report
-          path: cypress/reports/*.html
+        path: cypress/reports/*.html
