@@ -46,7 +46,7 @@ describe('template spec', () => {
     cy.get('span').contains('Place Order').click();
     cy.contains('Thank you for your purchase!')
    
-  
+  cy.percySnapshot("test")
   });
   
 
