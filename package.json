@@ -9,7 +9,7 @@
     "cy:run": "cypress run",
     "percy:run":"percy exec -- cypress run",
       "cypress:report": "cypress run --reporter cypress-mochawesome-reporter",
-      "generate:report": "npx mochawesome-merge cypress/reports/*.json > cypress/reports/mochawesome.json && npx mochawesome-report-generator cypress/reports/mochawesome.json -o cypress/reports/html"
+      "generate:report": "npx mochawesome-merge cypress/reports/*.json > cypress/reports/mochawesome.json && npx mochawesome-report-generator cypress/reports/mochawesome.json -o cypress/reports/*.html"
 
   },
   "author": "",
