@@ -47,12 +47,6 @@ jobs:
 
       - name: Display JSON content
         run: cat cypress/reports/ merged-report.json
-    
-      - name: Generate HTML report
-        run: npm run report:merge
-        
-    
-
 
       - name: Upload HTML report
         # Télécharger le rapport HTML comme artefact
