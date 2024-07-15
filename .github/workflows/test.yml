@@ -10,7 +10,7 @@ jobs:
   test:
 
     # Utilise l'image d'environnement Ubuntu la plus récente
-    runs-on: ubuntu-1
+    runs-on: ubuntu-latest
 
 
     env:
